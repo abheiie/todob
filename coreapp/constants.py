@@ -1,6 +1,7 @@
 
 collections = {
-    "users": "users"
+    "users": "users",
+    "todos": "todos"
 }
 
 LOGIN_TOKEN_EXPIRE_TIMEOUT = 60*60*24*30

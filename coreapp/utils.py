@@ -6,3 +6,4 @@ def create_new_sequential_id(collection):
     return id
 
 
+

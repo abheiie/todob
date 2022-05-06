@@ -16,6 +16,8 @@ from pathlib import Path
 from pymongo import MongoClient
 from credentials import MONGO_DB_URI
 
+import ssl
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -127,5 +129,5 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # MONGO DB CONNECTION
-CONNECTION = MongoClient(MONGO_DB_URI)
+CONNECTION = MongoClient(MONGO_DB_URI, ssl_cert_reqs=ssl.CERT_NONE)
 DB = CONNECTION["todoapp"]
