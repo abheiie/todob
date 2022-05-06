@@ -12,6 +12,10 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 
 from pathlib import Path
 
+# Mongo db imports
+from pymongo import MongoClient
+from credentials import MONGO_DB_URI
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -121,3 +125,7 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# MONGO DB CONNECTION
+CONNECTION = MongoClient(MONGO_DB_URI)
+DB = CONNECTION["todoapp"]
