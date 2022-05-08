@@ -5,15 +5,16 @@ from credentials import SECRET_KEY, ALGO
 
 
 class CustomAuthentication(BaseAuthentication):
+    """
+    Overriding DRF's BaseAuthentication class and making custom authentication
+    class 'CustomAuthentication' using JWT
+    """
     def authenticate(self, request):
-
         if 'Authorization' in request.headers:
-            # token = request.headers["Authorization"]
             token = str(request.META['HTTP_AUTHORIZATION'][7:])
             try:
                 user_data = {}
                 payload = jwt.decode(token, SECRET_KEY, ALGO)
-                print(payload)
                 user_data["user_id"] = payload["id"]
                 user_data["mobile"] = payload["mobile"]
                 user_data["full_name"] = payload["full_name"]

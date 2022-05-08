@@ -1,4 +1,5 @@
 
+# database collections
 collections = {
     "users": "users",
     "todos": "todos"
