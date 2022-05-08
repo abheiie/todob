@@ -41,7 +41,7 @@ def create_user(full_name, mobile, password):
 
     user = users_collection.find_one(
         {
-            "mobile": mobile, "password": password
+            "mobile": mobile, "password": encrypted_password
         },
         {
             "_id": 0, "createdAt": 0, "updated_at": 0, "password": 0
