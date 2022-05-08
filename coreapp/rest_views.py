@@ -39,7 +39,7 @@ class Register(APIView):
         if len(mobile) != 10:
             response = "Length of Mobile can be only of 10 digits"
             return Response(data=response, status=HTTP_400_BAD_REQUEST)
-        
+
         if not mobile.isdigit():
             response = "Mobile number can contain digits only"
             return Response(data=response, status=HTTP_400_BAD_REQUEST)
